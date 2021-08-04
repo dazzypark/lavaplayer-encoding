@@ -1,7 +1,7 @@
 {
   "name": "@lavalink/encoding",
   "version": "0.1.2",
-  "description": "Decode lavaplayer tracks locally",
+  "description": "Encode & decode lavaplayer tracks locally",
   "main": "dist/src/index.js",
   "typings": "typings/src/index.d.ts",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lavalibs/decode.git"
+    "url": "git+https://github.com/lavalibs/encoding.git"
   },
   "keywords": [
     "lavaplayer",
@@ -22,9 +22,9 @@
   "author": "natanbc",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/lavalibs/decode/issues"
+    "url": "https://github.com/lavalibs/encoding/issues"
   },
-  "homepage": "https://github.com/lavalibs/decode#readme",
+  "homepage": "https://github.com/lavalibs/encoding#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-syntax-bigint": "^7.4.4",
