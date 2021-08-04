@@ -16,8 +16,12 @@ export default class DataOutput {
         this.pos += bytes;
 
         if (this.pos >= this.buf.length) {
-            const newBuf = new Uint8Array(this.buf.length * 2 + 1);
+            // ensure the new buffer is at least as large as the needed size
+            const newLength = Math.max(this.buf.length + this.pos, this.buf.length * 2 + 1);
+
+            const newBuf = new Uint8Array(newLength);
             newBuf.set(this.buf);
+
             this.buf = newBuf;
             this.view = new DataView(this.buf.buffer);
         }
