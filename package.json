@@ -8,12 +8,11 @@
     "test": "npm run test:browser && npm run test:node",
     "test:browser": "jest --config jest.config.browser.js",
     "test:node": "jest --config jest.config.node.js",
-    "build": "rimraf dist typings && tsc",
-    "prepare": "npm test && npm run build"
+    "build": "rimraf dist typings && tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lavalibs/encoding.git"
+    "url": "git+https://github.com/Blad3Mak3r/lavaplayer-encoding.git"
   },
   "keywords": [
     "lavaplayer",
@@ -22,9 +21,9 @@
   "author": "natanbc",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/lavalibs/encoding/issues"
+    "url": "https://github.com/Blad3Mak3r/lavaplayer-encoding/issues"
   },
-  "homepage": "https://github.com/lavalibs/encoding#readme",
+  "homepage": "https://github.com/Blad3Mak3r/lavaplayer-encoding#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-syntax-bigint": "^7.4.4",
