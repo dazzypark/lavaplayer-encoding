@@ -8,6 +8,8 @@ const trackInfo: TrackInfo = {
 	isStream: false,
 	title: 'Rick Astley - Never Gonna Give You Up',
 	uri: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+	artworkUrl: null,
+	isrc: null,
 	position: 0n,
 	flags: 1,
 	version: 2,
@@ -92,6 +94,8 @@ const googleTrackInfo: TrackInfo = {
 	isStream: false,
 	length: 256561n,
 	position: 0n,
+	artworkUrl: null,
+	isrc: null,
 	probeInfo: {
 		name: 'matroska/webm',
 		parameters: null,

@@ -11,6 +11,8 @@ export interface TrackInfo {
     position: bigint;
     title: string;
     uri: string | null;
+    artworkUrl: string | null
+    isrc: string | null
     version?: number;
     probeInfo?: { raw: string, name: string, parameters: string | null };
 }
@@ -70,6 +72,8 @@ const decoders = [
             identifier,
             isStream,
             uri,
+            artworkUrl: null,
+            isrc: null,
             source,
             position: 0n,
         };
@@ -96,6 +100,38 @@ const decoders = [
             identifier,
             isStream,
             uri,
+            artworkUrl: null,
+            isrc: null,
+            source,
+            position: 0n,
+        };
+        const reader = sourceReaders[source];
+        if (reader) reader(track, input);
+        track.position = input.readLong();
+
+        return track;
+    },
+    (input: DataInput, flags: number) => {
+        const title = input.readUTF();
+        const author = input.readUTF();
+        const length = input.readLong();
+        const identifier = input.readUTF();
+        const isStream = input.readBoolean();
+        const uri = input.readBoolean() ? input.readUTF() : null;
+        const artworkUrl = input.readBoolean() ? input.readUTF() : null;
+        const isrc = input.readBoolean() ? input.readUTF() : null;
+        const source: Source = input.readUTF() as Source;
+        const track: TrackInfo = {
+            flags,
+            version: 2,
+            title,
+            author,
+            length,
+            identifier,
+            isStream,
+            uri,
+            artworkUrl,
+            isrc,
             source,
             position: 0n,
         };
@@ -118,6 +154,23 @@ const encoders = [
         output.writeBoolean(track.isStream || false);
         output.writeBoolean(Boolean(track.uri));
         if (track.uri) output.writeUTF(track.uri);
+        output.writeUTF(track.source || "<no source provided>");
+        const writer = sourceWriters[track.source || ''];
+        if (writer) writer(track, output);
+        output.writeLong(track.position || 0n);
+    },
+    (track: Partial<TrackInfo>, output: DataOutput) => {
+        output.writeUTF(track.title || "<no title provided>");
+        output.writeUTF(track.author || "<no author provided>");
+        output.writeLong(track.length || 0n);
+        output.writeUTF(track.identifier || "<no identifier provided>");
+        output.writeBoolean(track.isStream || false);
+        output.writeBoolean(Boolean(track.uri));
+        if (track.uri) output.writeUTF(track.uri);
+        output.writeBoolean(Boolean(track.artworkUrl));
+        if (track.artworkUrl) output.writeUTF(track.artworkUrl);
+        output.writeBoolean(Boolean(track.isrc));
+        if (track.isrc) output.writeUTF(track.isrc);
         output.writeUTF(track.source || "<no source provided>");
         const writer = sourceWriters[track.source || ''];
         if (writer) writer(track, output);
