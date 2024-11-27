@@ -1,11 +1,12 @@
 {
   "name": "@blad3mak3r/lavaplayer-encoding",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Encode & decode lavaplayer tracks locally",
   "main": "dist/src/index.js",
   "typings": "typings/src/index.d.ts",
   "files": [
-    "dist/src/**/*"
+    "dist/src/**/*",
+    "typings/*"
   ],
   "scripts": {
     "test": "npm run test:browser && npm run test:node",
