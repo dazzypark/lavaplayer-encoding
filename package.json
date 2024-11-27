@@ -8,7 +8,7 @@
     "test": "npm run test:browser && npm run test:node",
     "test:browser": "jest --config jest.config.browser.js",
     "test:node": "jest --config jest.config.node.js",
-    "build": "rimraf dist typings && tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
