@@ -1,14 +1,18 @@
 {
   "name": "@blad3mak3r/lavaplayer-encoding",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Encode & decode lavaplayer tracks locally",
   "main": "dist/src/index.js",
   "typings": "typings/src/index.d.ts",
+  "files": [
+    "dist/src/**/*"
+  ],
   "scripts": {
     "test": "npm run test:browser && npm run test:node",
     "test:browser": "jest --config jest.config.browser.js",
     "test:node": "jest --config jest.config.node.js",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "pnpm run build"
   },
   "repository": {
     "type": "git",
@@ -18,7 +22,7 @@
     "lavaplayer",
     "track"
   ],
-  "author": "natanbc",
+  "author": "Blad3Mak3r",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Blad3Mak3r/lavaplayer-encoding/issues"
