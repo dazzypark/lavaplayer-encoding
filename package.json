@@ -1,6 +1,6 @@
 {
   "name": "@dazzy/lavaplayer-encoding",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Encode & decode lavaplayer tracks locally",
   "main": "dist/src/index.js",
   "typings": "typings/src/index.d.ts",
