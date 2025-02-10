@@ -48,12 +48,12 @@ function writeProbeInfo(
 // should either read the data into the track or
 // discard it, so the position can be safely read.
 const sourceReaders: { [key: string]: typeof parseProbeInfo | undefined } = {
-  http: parseProbeInfo,
+  // http: parseProbeInfo,
   local: parseProbeInfo,
 };
 
 const sourceWriters: { [key: string]: typeof writeProbeInfo | undefined } = {
-  http: writeProbeInfo,
+  // http: writeProbeInfo,
   local: writeProbeInfo,
 };
 
