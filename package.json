@@ -1,5 +1,5 @@
 {
-  "name": "@blad3mak3r/lavaplayer-encoding",
+  "name": "@dazzy/lavaplayer-encoding",
   "version": "0.1.6",
   "description": "Encode & decode lavaplayer tracks locally",
   "main": "dist/src/index.js",
@@ -17,18 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Blad3Mak3r/lavaplayer-encoding.git"
+    "url": "git+https://github.com/dazzypark/lavaplayer-encoding.git"
   },
   "keywords": [
     "lavaplayer",
     "track"
   ],
-  "author": "Blad3Mak3r",
+  "author": "dazzypark",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Blad3Mak3r/lavaplayer-encoding/issues"
+    "url": "https://github.com/dazzypark/lavaplayer-encoding/issues"
   },
-  "homepage": "https://github.com/Blad3Mak3r/lavaplayer-encoding#readme",
+  "homepage": "https://github.com/dazzypark/lavaplayer-encoding#readme",
   "devDependencies": {
     "@babel/core": "^7.26.8",
     "@babel/plugin-syntax-bigint": "^7.8.3",
