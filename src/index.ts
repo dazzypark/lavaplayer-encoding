@@ -18,7 +18,7 @@ export interface TrackInfo {
 }
 
 const TRACK_INFO_VERSIONED = 1;
-const TRACK_INFO_VERSION = 2;
+const TRACK_INFO_VERSION = 3;
 const PARAMETERS_SEPARATOR = "|";
 
 function parseProbeInfo(track: Pick<TrackInfo, "probeInfo">, input: DataInput) {

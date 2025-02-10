@@ -62,6 +62,7 @@ export default class DataOutput {
   }
 
   public writeLong(value: bigint) {
+    value = BigInt(value);
     const msb = value / BigInt(2 ** 32);
     const lsb = value % BigInt(2 ** 32);
     let p = this._advance(4);
